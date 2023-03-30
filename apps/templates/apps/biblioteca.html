@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <h1>Biblioteca</h1>
+    {% for libros in object_list %}
+        
+        <p>Nombre: {{libros.titulo}} </p>
+        <p>
+            <a href="{% url 'detalles' libros.pk %}" class="btn btn-primary">Ver detalles</a>
+         </p>
+       
+    {% endfor %}
+        
+        <a class="btn btn-primary" href="{% url 'Inicio' %}" role="button">Inicio</a>
+        <a class="btn btn-primary" href="{% url 'libform' %}" role="button">Ingresar otro Libro</a>
+</body>
+</html>
